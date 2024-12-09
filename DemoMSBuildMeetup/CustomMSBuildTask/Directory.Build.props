@@ -1,0 +1,7 @@
+﻿<Project>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Build.Utilities.Core" PrivateAssets="all"  Version="[17.12.0,)" />
+	</ItemGroup>
+
+</Project>

@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+  </PropertyGroup>
+
+  <Target Name="CustomTarget" BeforeTargets="Build">
+	   <CustomMSBuildTask />
+   </Target>
+
+  <UsingTask TaskName="CustomMSBuildTask"
+             AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.Core.dll"
+             TaskFactory="RoslynCodeTaskFactory">
+    <Task>
+      <Code Source="$(MSBuildThisFileDirectory)\CustomMSBuildTask.cs" Language="cs" />
+    </Task>
+  </UsingTask>
+
+
+</Project>
